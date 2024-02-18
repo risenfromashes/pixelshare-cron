@@ -17,6 +17,10 @@ const createEmbeddings = async (env: Env) => {
 		throw new Error(error.message);
 	}
 
+	if (!data || data.length === 0) {
+		return;
+	}
+
 	const req = { images: data.map((d: any) => (d.url)) };
 
 	try {
