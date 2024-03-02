@@ -19,7 +19,7 @@ const createEmbeddings = async (env: Env, model_: string) => {
 		throw new Error(error.message);
 	}
 
-	if (data.length === 0) {
+	if (!data || data.length === 0) {
 		return;
 	}
 
